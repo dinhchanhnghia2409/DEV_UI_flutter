@@ -1,22 +1,17 @@
 import 'dart:html';
-import 'package:dev_ui/constant.dart';
 import 'package:flutter/material.dart';
-import '../../components/rounded_input_field.dart';
-import '../../components/rounded_password_field.dart';
-import '../../components/rounded_email_field.dart';
 import 'package:dev_ui/constant.dart';
 import '../Home/HomePage.dart';
-import '../Welcome/welComePage.dart';
+import '../../components/box_Container.dart';
 
-class SignUpPage extends StatefulWidget {
+class WelcomePage extends StatefulWidget {
   @override
-  _SignUpPageState createState() => _SignUpPageState();
+  _WelcomePageState createState() => _WelcomePageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(color: Colors.amber),
@@ -39,12 +34,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          "Register Account",
+                          "Welcome to Dev Group",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Create a new Account",
+                          "Coding is my life",
                           style: TextStyle(
                               fontSize: 12, fontWeight: FontWeight.bold),
                         ),
@@ -56,47 +51,21 @@ class _SignUpPageState extends State<SignUpPage> {
                     decoration: BoxDecoration(color: Colors.white),
                     child: Column(
                       children: <Widget>[
-                        RoundedInputField(
-                          hintText: "Username",
-                        ),
-                        RoundedPasswordField(),
-                        RoundedEmailField(
-                          hintText: 'Email',
-                        ),
                         Divider(),
                         RaisedButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return WelcomePage(); // Chuyen toi trang profile
-                                },
-                              ),
-                            );
-                          },
-                          textColor: Colors.white,
-                          padding: const EdgeInsets.all(0.0),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: <Color>[
-                                  kPrimaryColor,
-                                  kpPrimaryColor2,
-                                  kPrimaryColor,
-                                ],
-                              ),
-                            ),
-                            padding: const EdgeInsets.fromLTRB(70, 10, 70, 10),
-                            child: const Text(
-                              'Register',
-                              style: TextStyle(
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text('Already have a account? Login')
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return HomePage(); // Chuyen toi trang profile
+                                  },
+                                ),
+                              );
+                            },
+                            textColor: Colors.white,
+                            padding: const EdgeInsets.all(0.0),
+                            child: boxContainer),
                       ],
                     ),
                   ),

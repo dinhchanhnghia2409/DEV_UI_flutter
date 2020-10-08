@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'src/Pages/Home/HomePage.dart';
 import 'src/Pages/SignUp/signUpPage.dart';
 
 void main() {
